@@ -1,0 +1,7 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+	<h1><a href="https://github.com/magnolia-k/Enbld/blob/master/README.md">Enbld - Build your development environment by perl-based DSL.(Link to GitHub)</a></h1>
+
+: }

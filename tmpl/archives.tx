@@ -1,0 +1,7 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+<div class='title'>blogggggg</div>
+
+: }

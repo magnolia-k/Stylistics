@@ -1,0 +1,36 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+<h1 class="about">about</h1>
+
+<dl>
+
+	<dt class="about">id:</dt>
+		<dd class="about"><img src="<: uri_for('/static/img/shaved_ice.jpg') :>" alt="shaved ice" />
+magnolia</dd>
+
+			<br />
+
+	<dt class="about">mail:</dt>
+		<dd class="about">magnolia.k@me.com</dd>
+
+	<br />
+
+	<dt class="about">codewall:</dt>
+		<dd class="about"><a href="https://coderwall.com/magnolia-k">https://coderwall.com/magnolia-k</a>
+
+		<a href="https://coderwall.com/magnolia-k"><img alt="Endorse magnolia-k on Coderwall" src="https://api.coderwall.com/magnolia-k/endorsecount.png" /></a>
+	<br />
+
+	<dt class="about">CPAN:</dt>
+		<dd class="about"><a href="https://metacpan.org/author/MAGNOLIA">https://metacpan.org/author/MAGNOLIA</a></dd>
+
+	<br />
+
+	<dt class="about">GitHub:</dt>
+		<dd class="about"><a href="https://github.com/magnolia-k">https://github.com/magnolia-k</a></dd>
+</dl>
+
+
+: }

@@ -1,0 +1,9 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+	<: for $entries -> $entry { :>
+		<li><: $entry :></li>
+	<: } :>
+
+: }

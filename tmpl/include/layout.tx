@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title><: $title || 'Stylistics' :></title>
+    <title><: $title || 'code.stylistics.net' :></title>
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
@@ -26,24 +26,23 @@
     <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Stylistics</a>
-                <div class="nav-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                </div>
+                <a class="navbar-brand" href="/">Top</a>
+                <a class="navbar-brand" href="/blog/">Blog</a>
+                <a class="navbar-brand" href="/archives/">Archives</a>
+                <a class="navbar-brand" href="/enbld/">Enbld</a>
+                <a class="navbar-brand" href="https://metacpan.org/author/MAGNOLIA">CPAN</a>
+                <a class="navbar-brand" href="https://github.com/magnolia-k">github</a>
+                <a class="navbar-brand" href="/about/">About</a>
             </div><!-- /.navbar-inner -->
         </div><!-- /.container -->
     </div><!-- /.navbar -->
-    <div class="container">
+
+	<div class="container">
         <div id="main">
             <: block content -> { } :>
         </div>
         <footer class="footer">
-            Powered by <a href="http://amon.64p.org/">Amon2</a>
+			Copyright © 2013- magnolia All Rights Reserved.
         </footer>
     </div>
 </body>
