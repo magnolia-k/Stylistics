@@ -7,6 +7,8 @@ use utf8;
 
 use Amon2::Web::Dispatcher::RouterBoom;
 
+use Digest::MD5 qw/md5_hex/;
+
 any '/' => sub {
     my ( $c ) = @_;
 
@@ -36,7 +38,12 @@ any '/enbld/' => sub {
 any '/about/' => sub {
 	my ( $c ) = @_;
 
-	return $c->render( 'about.tx' );
+	my $email = 'magnolia.k@me.com';
+	my $size  = 120;
+	my $site  = "http://www.gravatar.com/avatar/";
+	my $grav_url = $site . md5_hex(lc $email) . "&s=".$size;
+
+	return $c->render( 'about.tx' => { image => $grav_url });
 };
 
 1;

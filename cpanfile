@@ -15,6 +15,7 @@ requires 'Time::Piece', '1.20';
 requires 'perl', '5.010_001';
 requires 'Text::Markdown';
 requires 'Starman';
+requires 'Digest::MD5';
 
 on configure => sub {
     requires 'Module::Build', '0.38';

@@ -7,7 +7,7 @@
 <dl>
 
 	<dt class="about">id:</dt>
-		<dd class="about"><img src="<: uri_for('/static/img/shaved_ice.jpg') :>" alt="shaved ice" />
+		<dd class="about"><img src="<: $image :>" alt="shaved ice" />
 magnolia</dd>
 
 			<br />
