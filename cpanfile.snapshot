@@ -1692,6 +1692,13 @@ DISTRIBUTIONS
       Test::Exception 0
       Test::More 0.42
       Text::Balanced 0
+  Text-SimpleTable-2.03
+    pathname: M/MR/MRAMBERG/Text-SimpleTable-2.03.tar.gz
+    provides:
+      Text::SimpleTable 2.03
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
   Text-Xslate-3.0.0
     pathname: G/GF/GFUJI/Text-Xslate-3.0.0.tar.gz
     provides:

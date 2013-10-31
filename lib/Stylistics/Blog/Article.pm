@@ -11,7 +11,7 @@ sub new {
     my $self = {
         title    => undef,
         date     => undef,
-        basename => undef,
+        entry_id => undef,
         text     => undef,
         blog_ref => undef,
         @_,
@@ -22,22 +22,40 @@ sub new {
     return $self;
 }
 
+sub title {
+	my $self = shift;
+
+	return $self->{title};
+}
+
 sub date {
     my $self = shift;
 
     return $self->{date};
 }
 
+sub basename {
+	my $self = shift;
+
+	return $self->{entry_id};
+}
+
+sub entry_id {
+	my $self = shift;
+
+	return $self->{entry_id};
+}
+
 sub filename {
     my $self = shift;
 
-    return $self->{basename} . '.html';
+    return $self->basename . '.html';
 }
 
 sub source {
     my $self = shift;
 
-    return $self->{basename} . '.md';
+    return $self->basename . '.md';
 }
 
 sub text {
@@ -46,7 +64,8 @@ sub text {
     return $self->{text} if $self->{text};
 
     my $path = File::Spec->catfile( $self->{blog_ref}->dir, $self->source );
-    unless ( ! -e $path ) {
+
+	unless ( -e $path ) {
         die "article file is not exists:$path";
     }
 

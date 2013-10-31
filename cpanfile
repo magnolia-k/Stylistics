@@ -17,6 +17,8 @@ requires 'Text::Markdown';
 requires 'Starman';
 requires 'Digest::MD5';
 
+requires 'Text::SimpleTable';
+
 on configure => sub {
     requires 'Module::Build', '0.38';
     requires 'Module::CPANfile', '0.9010';

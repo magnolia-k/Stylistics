@@ -5,15 +5,14 @@ use warnings;
 
 use File::Spec;
 use autodie;
+
 use JSON qw/decode_json/;
-use Encode;
 
 sub new {
     my $class = shift;
-    my $dir   = shift;
 
     my $self = {
-        dir         => $dir,
+        dir         => undef,
         articles    => {},
         @_,
     };
@@ -25,6 +24,12 @@ sub new {
     return $self;
 }
 
+sub dir {
+	my $self = shift;
+
+	return $self->{dir};
+}
+
 sub _initialize {
     my $self = shift;
 
@@ -33,14 +38,17 @@ sub _initialize {
     return unless ( -e $path );
 
     open my $fh, '<', $path;
-    my $articles_ref = decode_json( decode( 'UTF-8', do { local $/; <$fh> } ) );
+    my $articles_ref = decode_json( do { local $/; <$fh> } );
     close $fh;
 
     require Stylistics::Blog::Article;
     for my $article ( @{ $articles_ref } ) {
-        my $obj = Stylistics::Blog::Article->new( %{ $article }, blog => $self );
+        my $obj = Stylistics::Blog::Article->new(
+				%{ $article },
+				blog_ref => $self
+				);
         
-        $self->{articles}{$obj->html_filename} = $obj;
+        $self->{articles}{$obj->basename} = $obj;
     }
 
     return $self;
@@ -50,7 +58,7 @@ sub list {
     my $self  = shift;
 
     my $param = {
-        limit => undef,
+        limit => 10,
         @_,
     };
 
@@ -62,21 +70,26 @@ sub list {
 
     my @sorted = map { $self->{articles}{$_} } @keys;
 
-    return @sorted[1..$param->{limit}] if $param->{limit};
-
-    return @sorted;
+	if ( $param->{limit} ) {
+		my $limit  = scalar( @sorted ) < $param->{limit} ? scalar( @sorted ) : $param->{limit};
+		my @sliced = $param->{limit} ? @sorted[0 .. $limit - 1] : @sorted;
+	
+		return \@sliced;
+	} else {
+		return \@sorted;
+	}
 }
 
 sub article {
     my $self = shift;
 
     my $param = {
-        filename => undef,
+        entry_id => undef,
         @_,
     };
 
-    if ( exists $self->{articles}{$param->filename} ) {
-        return $self->{articles}{$param->filename};
+    if ( exists $self->{articles}{$param->{entry_id}} ) {
+        return $self->{articles}{$param->{entry_id}};
     }
 
     return;

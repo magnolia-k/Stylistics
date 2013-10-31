@@ -6,10 +6,14 @@ body {
 	text-align: left;
 
 	font-family: "Helvetica", sans-self;
-	font-size:   72px;
+	font-size:   64pt;
 	font-weight: bold;
 
 	color: #ffffff;
+}
+
+h1.archives {
+	color: white;
 }
 
 h1.about {
@@ -18,7 +22,7 @@ h1.about {
 	padding-left: 50px;
 
 	font-family: "Helvetica", sans-self;
-	font-size:   48px;
+	font-size:   48pt;
 
 	color: #ffffff;
 }
@@ -33,7 +37,7 @@ dt.about {
 	padding-left: 100px;
 
 	font-family: "Helvetica", sans-self;
-	font-size:   36px;
+	font-size:   36pt;
 
 	color: #ffffff;
 }
@@ -44,7 +48,7 @@ dd.about {
 	padding-left: 150px;
 
 	font-family: "Helvetica", sans-self;
-	font-size:   32px;
+	font-size:   32pt;
 
 	color: #ffffff;
 }
@@ -52,6 +56,37 @@ dd.about {
 
 .container {
 	width:	 960px;
+}
+
+.blog {
+	background-color: white;
+	padding:   10px 10px 20px 20px;
+	color:     black;
+}
+
+h1.blog {
+	color: MediumBlue;
+}
+
+.archives {
+	font-size: 14pt;
+	color:     white;
+}
+
+.date {
+	float:     right;
+	font-size: 14pt;
+	margin:   0 20px 10px 10px;
+}
+
+.permalink {
+	float:     right;
+	font-size: 14pt;
+	margin:   0 20px 10px 10px;
+}
+
+.reset {
+	float: clear;
 }
 
 footer {

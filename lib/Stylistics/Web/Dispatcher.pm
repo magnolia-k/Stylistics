@@ -9,6 +9,11 @@ use Amon2::Web::Dispatcher::RouterBoom;
 
 use Digest::MD5 qw/md5_hex/;
 
+use File::Spec;
+use Stylistics::Blog;
+
+my $blog = Stylistics::Blog->new( dir => File::Spec->catdir( 'static', 'blog' ) );
+
 any '/' => sub {
     my ( $c ) = @_;
 
@@ -18,15 +23,24 @@ any '/' => sub {
 any '/blog/' => sub {
 	my ( $c ) = @_;
 
-	my @entries = ( 'aaa', 'bbb' );
-
-	return $c->render( 'blog.tx' => { entries => \@entries } );
+	return $c->render( 'blog.tx' => { entries => $blog->list( limit => undef ) } );
 };
 
 any '/archives/' => sub {
 	my ( $c ) = @_;
 
-	return $c->render( 'archives.tx' );
+	return $c->render( 'archives.tx' => { entries => $blog->list( limit => 10 ) } );
+};
+
+any 'archives/{article_index}' => sub {
+	my ( $c, $args ) = @_;
+
+	my $entry_id = $args->{article_index};
+	$entry_id =~ s/\.html$//;
+
+	my $article = $blog->article( entry_id => $entry_id );
+
+	return $c->render( 'article.tx' => { entry => $article } );
 };
 
 any '/enbld/' => sub {

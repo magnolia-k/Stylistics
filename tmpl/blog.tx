@@ -3,7 +3,18 @@
 : override content -> {
 
 	<: for $entries -> $entry { :>
-		<li><: $entry :></li>
+		<div class="blog">
+			<h1><: $entry.title :></h1>
+			<hr />
+			<:  $entry.text | mark_raw :>
+			<hr />
+			<div class="date"><: $entry.date :></div>
+			<div class="permalink">
+				<a href="../archives/<: $entry.filename :>">Permalink</a>
+			</div>
+			<div class="reset"></div>
+			<br />
+		</div>
 	<: } :>
 
 : }

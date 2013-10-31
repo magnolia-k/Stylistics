@@ -2,6 +2,13 @@
 
 : override content -> {
 
-<div class='title'>blogggggg</div>
+<div class="archives">
+	<h1>Blog Archives</h1>
+
+	<: for $entries -> $entry { :>
+		<: $entry.date :>
+		<a href="../archives/<: $entry.filename :>"><: $entry.title :></a>
+	<: } :>
+</div>
 
 : }
