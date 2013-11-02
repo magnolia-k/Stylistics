@@ -2,9 +2,38 @@
 
 : override content -> {
 
-<div class='title'>http://</div>
-<div class='title'>code-</div>
-<div class='title'>stylistics.</div>
-<div class='title'>net</div>
+<div class="row">
+	<div class="col-md-6">
+		<h1>About Me</h1>
+		<dl class="dl-horizontal">
+
+	<dt>name:</dt>
+		<dd><img src="<: $image :>" class="img-rounded" alt="shaved ice" />
+magnolia</dd>
+
+	<dt>mail:</dt>
+		<dd>magnolia.k@me.com</dd>
+
+	<dt>codewall:</dt>
+		<dd><a href="https://coderwall.com/magnolia-k">https://coderwall.com/magnolia-k</a>
+
+		<a href="https://coderwall.com/magnolia-k"><img alt="Endorse magnolia-k on Coderwall" src="https://api.coderwall.com/magnolia-k/endorsecount.png" /></a>
+	<dt>CPAN:</dt>
+		<dd><a href="https://metacpan.org/author/MAGNOLIA">https://metacpan.org/author/MAGNOLIA</a></dd>
+
+	<dt>GitHub:</dt>
+		<dd><a href="https://github.com/magnolia-k">https://github.com/magnolia-k</a></dd>
+</dl>
+
+
+	</div>
+
+	<div class="col-md-6">
+		<h1>What's new</h1>
+		<ul>
+			<li>2013-11-2 Site open!</li>
+		</ul>
+	</div>
+</div>
 
 : }

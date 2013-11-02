@@ -37,8 +37,8 @@ my $app = builder {
     Stylistics::Web->to_app();
 };
 unless (caller) {
-    my $port        = 5000;
-    my $host        = '127.0.0.1';
+    my $port        = 80;
+    my $host        = 'code-stylistics.net';
     my $max_workers = 4;
 
     require Getopt::Long;
@@ -70,7 +70,7 @@ unless (caller) {
 
     print "Stylistics: http://${host}:${port}/\n";
 
-    my $loader = Plack::Loader->load('Starlet',
+    my $loader = Plack::Loader->load('Starman',
         port        => $port,
         host        => $host,
         max_workers => $max_workers,

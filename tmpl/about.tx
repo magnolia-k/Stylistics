@@ -2,34 +2,26 @@
 
 : override content -> {
 
-<h1 class="about">about</h1>
+<h1>About</h1>
 
-<dl>
+<dl class="dl-horizontal">
 
-	<dt class="about">id:</dt>
-		<dd class="about"><img src="<: $image :>" alt="shaved ice" />
+	<dt>name:</dt>
+		<dd><img src="<: $image :>" class="img-rounded" alt="shaved ice" />
 magnolia</dd>
 
-			<br />
+	<dt>mail:</dt>
+		<dd>magnolia.k@me.com</dd>
 
-	<dt class="about">mail:</dt>
-		<dd class="about">magnolia.k@me.com</dd>
-
-	<br />
-
-	<dt class="about">codewall:</dt>
-		<dd class="about"><a href="https://coderwall.com/magnolia-k">https://coderwall.com/magnolia-k</a>
+	<dt>codewall:</dt>
+		<dd><a href="https://coderwall.com/magnolia-k">https://coderwall.com/magnolia-k</a>
 
 		<a href="https://coderwall.com/magnolia-k"><img alt="Endorse magnolia-k on Coderwall" src="https://api.coderwall.com/magnolia-k/endorsecount.png" /></a>
-	<br />
+	<dt>CPAN:</dt>
+		<dd><a href="https://metacpan.org/author/MAGNOLIA">https://metacpan.org/author/MAGNOLIA</a></dd>
 
-	<dt class="about">CPAN:</dt>
-		<dd class="about"><a href="https://metacpan.org/author/MAGNOLIA">https://metacpan.org/author/MAGNOLIA</a></dd>
-
-	<br />
-
-	<dt class="about">GitHub:</dt>
-		<dd class="about"><a href="https://github.com/magnolia-k">https://github.com/magnolia-k</a></dd>
+	<dt>GitHub:</dt>
+		<dd><a href="https://github.com/magnolia-k">https://github.com/magnolia-k</a></dd>
 </dl>
 
 

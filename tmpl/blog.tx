@@ -1,20 +1,24 @@
 : cascade "include/layout.tx"
 
 : override content -> {
+	<h1>Blog</h1>
 
 	<: for $entries -> $entry { :>
-		<div class="blog">
+		<article>
 			<h1><: $entry.title :></h1>
 			<hr />
 			<:  $entry.text | mark_raw :>
 			<hr />
-			<div class="date"><: $entry.date :></div>
-			<div class="permalink">
+
+			<div>
+				<: $entry.date :>
+			</div>
+
+			<div>
 				<a href="../archives/<: $entry.filename :>">Permalink</a>
 			</div>
-			<div class="reset"></div>
-			<br />
-		</div>
+		</article>
+		<br />
 	<: } :>
 
 : }

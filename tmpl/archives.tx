@@ -2,7 +2,7 @@
 
 : override content -> {
 
-<div class="archives">
+<div>
 	<h1>Blog Archives</h1>
 
 	<: for $entries -> $entry { :>

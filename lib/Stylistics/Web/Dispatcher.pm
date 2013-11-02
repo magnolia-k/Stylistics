@@ -14,10 +14,15 @@ use Stylistics::Blog;
 
 my $blog = Stylistics::Blog->new( dir => File::Spec->catdir( 'static', 'blog' ) );
 
+my $email = 'magnolia.k@me.com';
+my $size  = 120;
+my $site  = "http://www.gravatar.com/avatar/";
+my $grav_url = $site . md5_hex(lc $email) . "&s=".$size;
+
 any '/' => sub {
     my ( $c ) = @_;
 
-    return $c->render( 'index.tx' );
+    return $c->render( 'index.tx' => { image => $grav_url } );
 };
 
 any '/blog/' => sub {
@@ -51,11 +56,6 @@ any '/enbld/' => sub {
 
 any '/about/' => sub {
 	my ( $c ) = @_;
-
-	my $email = 'magnolia.k@me.com';
-	my $size  = 120;
-	my $site  = "http://www.gravatar.com/avatar/";
-	my $grav_url = $site . md5_hex(lc $email) . "&s=".$size;
 
 	return $c->render( 'about.tx' => { image => $grav_url });
 };
