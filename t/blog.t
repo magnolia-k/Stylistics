@@ -21,6 +21,16 @@ my $older = $blog->article( entry_id => 'older_entry' );
 like( $newer->text, qr/<p>newer entry string/, 'newer test entry' );
 like( $older->text, qr/<p>older entry string/, 'older test entry' );
 
+is( $blog->previous_article( entry_id => 'older_entry' )->entry_id,
+		'newer_entry', 'got previous article for older' );
+is( $blog->next_article( entry_id => 'older_entry' ), undef,
+		'not got next article for older' );
+
+is( $blog->previous_article( entry_id => 'newer_entry' ), undef,
+		'not got previous article for newer' );
+is( $blog->next_article( entry_id => 'newer_entry' )->entry_id,
+	   'older_entry', 'got next article for newer' );
+
 is( @{ $blog->list }, 2, 'blog list' );
 
 my $list = $blog->list( limit => 1 );

@@ -388,6 +388,51 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.42
       Test::More 0.96
       perl 5.008001
+  Date-Manip-6.41
+    pathname: S/SB/SBECK/Date-Manip-6.41.tar.gz
+    provides:
+      Date::Manip 6.41
+      Date::Manip::Base 6.41
+      Date::Manip::DM5 5.65
+      Date::Manip::DM5abbrevs 6.41
+      Date::Manip::DM6 6.41
+      Date::Manip::Date 6.41
+      Date::Manip::Delta 6.41
+      Date::Manip::Lang::catalan 6.41
+      Date::Manip::Lang::danish 6.41
+      Date::Manip::Lang::dutch 6.41
+      Date::Manip::Lang::english 6.41
+      Date::Manip::Lang::finnish 6.41
+      Date::Manip::Lang::french 6.41
+      Date::Manip::Lang::german 6.41
+      Date::Manip::Lang::index 6.41
+      Date::Manip::Lang::italian 6.41
+      Date::Manip::Lang::norwegian 6.41
+      Date::Manip::Lang::polish 6.41
+      Date::Manip::Lang::portugue 6.41
+      Date::Manip::Lang::romanian 6.41
+      Date::Manip::Lang::russian 6.41
+      Date::Manip::Lang::spanish 6.41
+      Date::Manip::Lang::swedish 6.41
+      Date::Manip::Lang::turkish 6.41
+      Date::Manip::Obj 6.41
+      Date::Manip::Recur 6.41
+      Date::Manip::TZ 6.41
+      Date::Manip::TZ_Base 6.41
+      Date::Manip::TZdata 6.41
+      Date::Manip::Zones 6.41
+      Module::Build::Custom undef
+    requirements:
+      Carp 0
+      Encode 0
+      ExtUtils::MakeMaker 0
+      File::Basename 0
+      IO::File 0
+      Storable 0
+      Test::Inter 0
+      Test::More 0
+      perl 5.006
+      utf8 0
   Devel-StackTrace-1.30
     pathname: D/DR/DROLSKY/Devel-StackTrace-1.30.tar.gz
     provides:
@@ -894,6 +939,72 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.30
       Params::Validate 0.15
       Sys::Syslog 0.25
+  Log-Dispatch-FileRotate-1.19
+    pathname: M/MA/MARKPF/Log-Dispatch-FileRotate-1.19.tar.gz
+    provides:
+      Log::Dispatch::FileRotate 1.19
+    requirements:
+      Date::Manip 0
+      ExtUtils::MakeMaker 0
+      Fcntl 0
+      Log::Dispatch::Output 0
+      Log::Log4perl 1.0
+      Params::Validate 0
+  Log-Log4perl-1.42
+    pathname: M/MS/MSCHILLI/Log-Log4perl-1.42.tar.gz
+    provides:
+      L4pResurrectable 0.01
+      Log::Log4perl 1.42
+      Log::Log4perl::Appender undef
+      Log::Log4perl::Appender::DBI undef
+      Log::Log4perl::Appender::File undef
+      Log::Log4perl::Appender::RRDs undef
+      Log::Log4perl::Appender::Screen undef
+      Log::Log4perl::Appender::ScreenColoredLevels undef
+      Log::Log4perl::Appender::Socket undef
+      Log::Log4perl::Appender::String undef
+      Log::Log4perl::Appender::TestArrayBuffer undef
+      Log::Log4perl::Appender::TestBuffer undef
+      Log::Log4perl::Appender::TestFileCreeper undef
+      Log::Log4perl::Catalyst undef
+      Log::Log4perl::Config undef
+      Log::Log4perl::Config::BaseConfigurator undef
+      Log::Log4perl::Config::DOMConfigurator 0.03
+      Log::Log4perl::Config::PropertyConfigurator undef
+      Log::Log4perl::Config::Watch undef
+      Log::Log4perl::DateFormat undef
+      Log::Log4perl::Filter undef
+      Log::Log4perl::Filter::Boolean undef
+      Log::Log4perl::Filter::LevelMatch undef
+      Log::Log4perl::Filter::LevelRange undef
+      Log::Log4perl::Filter::MDC undef
+      Log::Log4perl::Filter::StringMatch undef
+      Log::Log4perl::InternalDebug undef
+      Log::Log4perl::JavaMap undef
+      Log::Log4perl::JavaMap::ConsoleAppender undef
+      Log::Log4perl::JavaMap::FileAppender undef
+      Log::Log4perl::JavaMap::JDBCAppender undef
+      Log::Log4perl::JavaMap::NTEventLogAppender undef
+      Log::Log4perl::JavaMap::RollingFileAppender undef
+      Log::Log4perl::JavaMap::SyslogAppender undef
+      Log::Log4perl::JavaMap::TestBuffer undef
+      Log::Log4perl::Layout undef
+      Log::Log4perl::Layout::NoopLayout undef
+      Log::Log4perl::Layout::PatternLayout undef
+      Log::Log4perl::Layout::PatternLayout::Multiline undef
+      Log::Log4perl::Layout::SimpleLayout undef
+      Log::Log4perl::Level undef
+      Log::Log4perl::Logger undef
+      Log::Log4perl::MDC undef
+      Log::Log4perl::NDC undef
+      Log::Log4perl::Resurrector undef
+      Log::Log4perl::Util undef
+      Log::Log4perl::Util::Semaphore undef
+      Log::Log4perl::Util::TimeTracker undef
+    requirements:
+      ExtUtils::MakeMaker 0
+      File::Spec 0.82
+      Test::More 0.45
   MRO-Compat-0.12
     pathname: B/BO/BOBTFISH/MRO-Compat-0.12.tar.gz
     provides:
@@ -1605,6 +1716,15 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       parent 0
+  Test-Inter-1.05
+    pathname: S/SB/SBECK/Test-Inter-1.05.tar.gz
+    provides:
+      Test::Inter 1.05
+    requirements:
+      File::Basename 0
+      IO::File 0
+      Module::Build 0.39
+      perl 5.004
   Test-LongString-0.15
     pathname: R/RG/RGARCIA/Test-LongString-0.15.tar.gz
     provides:
