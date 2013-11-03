@@ -1,6 +1,8 @@
 #!perl
+
 use strict;
 use utf8;
+
 use File::Spec;
 use File::Basename;
 use lib File::Spec->catdir(dirname(__FILE__), '../lib');
@@ -14,7 +16,9 @@ use URI::Escape;
 use File::Path ();
 
 my $session_dir = File::Spec->catdir(File::Spec->tmpdir, uri_escape("Stylistics") . "-$<" );
+
 File::Path::mkpath($session_dir);
+
 my $app = builder {
     enable 'Plack::Middleware::Static',
         path => qr{^(?:/static/)},
@@ -36,6 +40,7 @@ my $app = builder {
 
     Stylistics::Web->to_app();
 };
+
 unless (caller) {
     my $port        = 80;
     my $host        = 'code-stylistics.net';
@@ -46,18 +51,21 @@ unless (caller) {
     my $p = Getopt::Long::Parser->new(
         config => [qw(posix_default no_ignore_case auto_help)]
     );
-    $p->getoptions(
+
+	$p->getoptions(
         'p|port=i'      => \$port,
         'host=s'      => \$host,
         'max-workers' => \$max_workers,
         'version!'    => \my $version,
         'c|config=s'  => \my $config_file,
     );
-    if ($version) {
+
+	if ($version) {
         print "Stylistics: $Stylistics::VERSION\n";
         exit 0;
     }
-    if ($config_file) {
+
+	if ($config_file) {
         my $config = do $config_file;
         Carp::croak("$config_file: $@") if $@;
         Carp::croak("$config_file: $!") unless defined $config;
@@ -75,6 +83,8 @@ unless (caller) {
         host        => $host,
         max_workers => $max_workers,
     );
-    return $loader->run($app);
+
+	return $loader->run($app);
 }
+
 return $app;

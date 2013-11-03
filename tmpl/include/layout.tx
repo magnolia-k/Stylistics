@@ -60,9 +60,6 @@
             <li><a href="https://metacpan.org/author/MAGNOLIA">CPAN</a></li>
             <li><a href="https://github.com/magnolia-k">GitHub</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/about/">About</a></li>
-          </ul>
         </div><!--/.nav-collapse -->
       </div>
 

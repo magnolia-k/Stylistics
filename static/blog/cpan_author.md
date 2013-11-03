@@ -1,22 +1,20 @@
-先日、ついに[Enbld](https://github.com/magnolia-k/Enbld)をCPANにアップしました。
+CPAN Authorになるまでの手順は、いくつかブログで紹介されていますが、ちょっと最近だったら補足しておいた方がいい所が有るので、2013年版ということで整理してみました。
 
-[http://search.cpan.org/dist/Enbld/](http://search.cpan.org/dist/Enbld/)
+# 1.PAUSEでアカウント登録
 
-CPAN Authorになるまでの手順は、いくつかブログで紹介されていますが、ちょっと最近だったら補足しておいた方がいい所が有るので、整理してみました。
-
-# PAUSEでアカウント登録
-
-## 申請
+## 1.1.申請
 
 CPANにファイルをアップするために[PAUSE](https://pause.perl.org/pause/query)でアカウントを登録する必要が有ります。
 
-画面左上の[Request PAUSE account](https://pause.perl.org/pause/query?ACTION=request_id)をクリックすると、登録画面が出てきます。
+[https://pause.perl.org/pause/query](https://pause.perl.org/pause/query)の画面左上の[Request PAUSE account](https://pause.perl.org/pause/query?ACTION=request_id)をクリックすると、登録画面が出てきます。
 
 名前、メールアドレス、Web Site（オプション）、希望するID、PAUSEに登録しようと思った理由を簡単に書いて「Request Account」ボタンを押します。
 
 IDの一覧は、[CPANのAuthor](http://search.cpan.org/author/)から見ることが出来ます。
 
-### 気をつける点
+申請の内容はメーリングリストに投げられるので、[module@perl.orgのアーカイブ](http://www.nntp.perl.org/group/perl.modules/)で全て公開されますので、記載内容は慎重に。予めほかの人の申請内容を見ておくといいと思います。
+
+### 1.1.1.気をつける点
 
 - 名前
 
@@ -32,7 +30,9 @@ IDの一覧は、[CPANのAuthor](http://search.cpan.org/author/)から見るこ�
 
 - 返信までの時間
 
- 管理者による承認プロセスがちゃんと入るので、ボタンを押してから返信のメールが来るまで4〜5時間はかかるので、気長に待ちましょう。
+ 管理者による承認プロセスがちゃんと入るので、ボタンを押してから返信のメールが来るまで早くても4〜5時間はかかります。
+
+ 数日かかることも有るみたいなので、気長に待ちましょう。
 
 - 確認メール
 
@@ -40,23 +40,23 @@ IDの一覧は、[CPANのAuthor](http://search.cpan.org/author/)から見るこ�
 
  管理者宛の申請メールのccが申請者に送られているだけです。
 
-## 登録
+## 1.2.登録
 
-しばらくすると、メールが2通送られて来ます。
+管理者による承認が完了すると、メールが2通送られて来ます。
 
-一通目は、アカウント登録したよってメールです。
+ - 一通目は、アカウント登録完了に関するメールです。
 
-二通目は、仮パスワードが書かれたメールです。
+ - 二通目は、仮パスワードが書かれたメールです。
 
 一通目にパスワードを変更するページへのリンクが張られているので、すぐに変えましょう。
 
-あと、一通目の最後に、モジュールはいきなりアップするんじゃなくて、事前に[PrePAN](http://prepan.org/)でレビュー受けた方がいいよって書かれているので、それに従った方が良いでしょう。
+あと、一通目の最後に、「モジュールは、いきなりアップするんじゃなくて、事前に[PrePAN](http://prepan.org/)でレビュー受けた方がいいよって書かれているので、それに従った方が良いでしょう。
 
-私も事前にPrePANに登録しました。
+私も事前に[PrePAN](http://prepan.org/)に登録しました。
 
 あと、Mac OS Xのメーラーが問答無用で迷惑メールに振り分けていたので、危うく見落とす所でした。皆さんもメールが来ないな、と思った時は迷惑メールフィルタを疑いましょう。
 
-## アカウント情報の編集
+## 1.3.アカウント情報の編集
 
 パスワードが発行されてログインできる様になったら、アカウント情報を登録します。
 
@@ -74,7 +74,7 @@ email addressは公開されるパブリックなものと、公開されない�
 
 最後にcpan.orgをどっちのメールアドレスに転送するか？って選択できるラジオボタンが有るので、選んでおきましょう。
 
-# モジュールのアップロード
+# 2. モジュールのアップロード
 
 モジュールのアップロードは、画面左のメニュー「Upload a file to CPAN」から行います。
 
@@ -84,13 +84,13 @@ email addressは公開されるパブリックなものと、公開されない�
 
 しばらくすると、アーカイブファイルの内容をインデックスに登録したよってメールが来ます。
 
-## アップロードの確認
+## 2.1.アップロードの確認
 
 [CPANのRecent](http://search.cpan.org/recent)に表示されるまでには、2〜3時間かかりますので、気長に待ちましょう。
 
 でも、[metacpanのRecent](https://metacpan.org/recent)にはすぐ表示されますので、こちらを見ればちゃんとアップできたか分かるので、安心です。
 
-# META.json
+# 3. META.json
 
 最近は皆さんリポジトリはGitHubを使っていると思うので、Issue登録はGitHub側で行いたいですね。
 
@@ -140,12 +140,16 @@ Makefile.PLはこんな感じです。meta-specのバージョンを2に設定�
 
 `no_index`あたりもちゃんと設定した方が良いので、ちゃんとチェックしておきましょう。
 
-## その他
+## 3.1. その他
 あとは何もともあれ、[http://www.cpan.org/modules/04pause.html](http://www.cpan.org/modules/04pause.html)を全部チェックしておきましょう。
 
 [CPAN::Meta::Spec](http://search.cpan.org/~dagolden/CPAN-Meta-2.132830/lib/CPAN/Meta/Spec.pm)は一通り読んでおくといいでしょう。
 
+# 4. Gravatarへの登録
 
+CPANや、Metacpanで独自のアイコンを設定するには、[Gravatar](http://ja.gravatar.com)を使います。メールアドレスを「【アカウント】@cpan.org」で登録すると、そのアイコンが自動的にCPANやMetacpanで表示されます。
+
+GitHubとかと同じアイコンにしておくと、いいと思います。
 
 以上、CPANにモジュールをアップするまでの流れでした。
 

@@ -868,6 +868,32 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.52
       Test::More 0.82
       perl 5.00503
+  Log-Dispatch-2.41
+    pathname: D/DR/DROLSKY/Log-Dispatch-2.41.tar.gz
+    provides:
+      Log::Dispatch 2.41
+      Log::Dispatch::ApacheLog 2.41
+      Log::Dispatch::Base 2.41
+      Log::Dispatch::Code 2.41
+      Log::Dispatch::Email 2.41
+      Log::Dispatch::Email::MIMELite 2.41
+      Log::Dispatch::Email::MailSend 2.41
+      Log::Dispatch::Email::MailSender 2.41
+      Log::Dispatch::Email::MailSendmail 2.41
+      Log::Dispatch::File 2.41
+      Log::Dispatch::File::Locked 2.41
+      Log::Dispatch::Handle 2.41
+      Log::Dispatch::Null 2.41
+      Log::Dispatch::Output 2.41
+      Log::Dispatch::Screen 2.41
+      Log::Dispatch::Syslog 2.41
+      Log::Dispatch::TestUtil undef
+    requirements:
+      Class::Load 0
+      Dist::CheckConflicts 0.02
+      ExtUtils::MakeMaker 6.30
+      Params::Validate 0.15
+      Sys::Syslog 0.25
   MRO-Compat-0.12
     pathname: B/BO/BOBTFISH/MRO-Compat-0.12.tar.gz
     provides:
@@ -1098,6 +1124,41 @@ DISTRIBUTIONS
       Scalar::Util 1.18
       Test::More 0.42
       perl 5.00503
+  Params-Validate-1.08
+    pathname: D/DR/DROLSKY/Params-Validate-1.08.tar.gz
+    provides:
+      Attribute::Params::Validate 1.08
+      Bar undef
+      Baz undef
+      Foo undef
+      PVTests undef
+      PVTests::Callbacks undef
+      PVTests::Defaults undef
+      PVTests::Regex undef
+      PVTests::Standard undef
+      PVTests::With undef
+      Params::Validate 1.08
+      Params::Validate::Constants 1.08
+      Params::Validate::PP 1.08
+      Params::Validate::XS 1.08
+      Quux undef
+      Testing::X undef
+      Yadda undef
+      inc::MyModuleBuild undef
+    requirements:
+      Attribute::Handlers 0.79
+      Carp 0
+      Exporter 0
+      ExtUtils::CBuilder 0
+      Module::Build 0.3601
+      Module::Implementation 0
+      Scalar::Util 1.10
+      XSLoader 0
+      attributes 0
+      perl 5.008001
+      strict 0
+      vars 0
+      warnings 0
   Plack-1.0029
     pathname: M/MI/MIYAGAWA/Plack-1.0029.tar.gz
     provides:
