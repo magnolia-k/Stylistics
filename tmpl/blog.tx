@@ -5,7 +5,7 @@
 
 	<: for $entries -> $entry { :>
 		<article>
-			<h1><: $entry.title :></h1>
+			<h1><a href="../archives/<: $entry.filename :>"><: $entry.title :></a></h1>
 			<hr />
 			<:  $entry.text | mark_raw :>
 			<hr />
