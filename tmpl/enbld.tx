@@ -2,6 +2,65 @@
 
 : override content -> {
 
-	<h1><a href="https://github.com/magnolia-k/Enbld/blob/master/README.md">Enbld<small> - Build your development environment by perl-based DSL.(Link to GitHub)</small></a></h1>
+<div class="jumbotron">
+	<h1>Enbld<small> - Build your development environment by perl-based DSL</small></h1>
+	<p>Enbldは、perlベースのDSLを使った環境構築ツールです。</p>
+
+	<p><a href="https://metacpan.org/pod/Enbld" class="btn btn-primary btn-lg" role="button">Learn More</a></p>
+</div>
+
+<div class="row">
+	<div class="col-md-8">
+
+	<h1>Enbldとは?</h1>
+	<p>Enbldはperlベースの環境構築ツールです。主な特徴は以下の通りです。
+	<ul>
+		<li>インストール条件は専用のDSLで定義</li>
+		<li>任意のバージョンがインストール可能</li>
+		<li>新バージョンのリリースチェック機能</li>
+		<li>デフォルトインストール先はホームディレクトリ(任意のディレクトリも指定可能)</li>
+	</ul>
+	</p>
+
+	<p>perlベースのDSLの例は以下の通りです。</p>
+	<pre><code>#!/usr/bin/perl
+
+use 5.012;
+use warnings;
+
+use utf8;
+
+use lib "$ENV{HOME}/.enbld/extlib/lib/perl5/";
+
+use Enbld;
+
+enbld 'myenv' => build {
+
+    # install latest version.
+    target 'git' => define {
+        version 'latest';
+    };
+
+    # install specific version.
+    target 'perl' => define {
+        version '5.18.1';
+    };
+
+};</code></pre>
+
+	</div>
+
+
+	<div class="col-md-4">
+		<h1>ドキュメント</h1>
+		<p>
+		<ul>
+			<li><a href="https://metacpan.org/pod/Enbld">Enbld</a></li>
+			<li><a href="https://metacpan.org/pod/Enbld::Tutorial">Enbld::Tutorial</a></li>
+			<li><a href="https://metacpan.org/pod/enblder">enblder</a></li>
+		</ul>
+	</div>
+
+</div>
 
 : }
