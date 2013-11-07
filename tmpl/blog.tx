@@ -9,14 +9,9 @@
 			<hr />
 			<:  $entry.text | mark_raw :>
 			<hr />
+			<p><: $entry.date :>
+			<a href="../archives/<: $entry.filename :>">Permalink</a></p>
 
-			<div>
-				<: $entry.date :>
-			</div>
-
-			<div>
-				<a href="../archives/<: $entry.filename :>">Permalink</a>
-			</div>
 		</article>
 		<br />
 	<: } :>

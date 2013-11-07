@@ -12,8 +12,8 @@
 
 		<:  $entry.text | mark_raw :>
 		<hr />
-		<div class="date"><: $entry.date :></div>
-		<div class="permalink"><a href="../archives/<: $entry.filename :>">Permalink</a></div>
+		<p><: $entry.date :>
+		<a href="../archives/<: $entry.filename :>">Permalink</a></p>
 
 		<ul class="pager">
 			<: $previous_link | mark_raw :>
