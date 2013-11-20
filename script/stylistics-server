@@ -32,6 +32,7 @@ my $app = builder {
 					'File',
 					min_level => 'info',
 					filename  => '/var/log/stylistics/access.log',
+                    mode      => 'append',
 				],
 			],
 			);
