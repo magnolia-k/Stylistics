@@ -11,6 +11,9 @@
 		<dd><img src="<: $image :>" class="img-rounded" alt="shaved ice" />
 magnolia</dd>
 
+    <dt>twitter:</dt>
+        <dd><a href="https://twitter.com/magnolia_k_">https://twitter.com/magnolia_k_</a></dd>
+
 	<dt>mail:</dt>
 		<dd>magnolia.k@me.com</dd>
 
