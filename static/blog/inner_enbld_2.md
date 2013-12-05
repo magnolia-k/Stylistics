@@ -1,5 +1,9 @@
 前回はEnbldのAttributeを紹介しました。今回は、Attributeの生成方法を説明します。
 
+過去の記事はこちらから。
+
+[Enbldの内部構造 - その1](../archives/inner_enbld_1.html)
+
 ## Attributeの生成
 
 Attributeは、4種類の生成方法が有ります。
