@@ -124,15 +124,10 @@ perlモジュールのひな形を作る時の2014年の定番といえば、[`M
     open_source
     unrestricted
     unknown
-
-以下の4つは、[`Software::License`](http://search.cpan.org/dist/Software-License/)がインストールされていないとメタファイルを作成する時にエラーになります。
-
     lgpl2
     lgpl3
     gpl2
     gpl3
-
-しかし、[`CPAN::Meta::Spec`](http://search.cpan.org/dist/CPAN-Meta/)でのライセンス名と異なるので、メタファイルには違う文字列が出力されます(`gpl3 -> gpl_3 `など)。
 
 以下のライセンス名は、[`Software::License`](http://search.cpan.org/dist/Software-License/)がインストールされている時だけ有効です。別名ですね。「`Perl_5`」が`Module::Build`では、[`Software::License`](http://search.cpan.org/dist/Software-License/)がインストールされていないと指定できないって所は少しトラップです。
 
@@ -159,4 +154,7 @@ perlモジュールのひな形を作る時の2014年の定番といえば、[`M
 ## おわりに
 
 CPANにアップロードするなら、[`CPAN::Meta::Spec`](http://search.cpan.org/dist/CPAN-Meta/)がサポートするライセンスが良いようです。
+
+2014-01-21修正
+Module::Buildのgpl2、gpl3、lgpl2、lgpl3の挙動が間違っていたので、修正
 
