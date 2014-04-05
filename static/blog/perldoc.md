@@ -3,6 +3,8 @@
     You have an old groff. Update to version 1.20.1 for good Unicode support.
     If you don't upgrade, wide characters may come out oddly.
 
+perldocから、内部的に、システムにインストールされているgroffが呼び出されるのですが、それが古いって言ってますね。
+
 普段`perldoc`で日本語で書かれたドキュメントを読むことは無いのであまり気にしていませんでしたが、拙作の[`Enbld`](https://metacpan.org/pod/Enbld)というツールの日本語ドキュメントをpodで書いたので、perldocを使って日本語で書かれたドキュメントを読む方法を調べてみました。
 
 以下、OS X 10.9 + perl 5.18.2環境で検証しました。
@@ -12,11 +14,28 @@ OS Xの`groff`は、いくらOSのバージョンが上がっても頑なに2004
 
 おそらくGPLの関係だと思われるので、とっとと自分でインストールします。
 
-`Enbld`でインストールします。
+`Enbld`で最新版をインストールします。
 
     $ enblder install groff
 
+	$ groff -v
+	GNU groff version 1.22.2
+	Copyright (C) 2013 Free Software Foundation, Inc.
+	GNU groff comes with ABSOLUTELY NO WARRANTY.
+	You may redistribute copies of groff and its subprograms
+	under the terms of the GNU General Public License.
+	For more information about these matters, see the file named COPYING.
+		
+	called subprograms:
+		
+	GNU grops (groff) version 1.22.2
+	GNU troff (groff) version 1.22.2
+
+最新版のgroff 1.22.2がインストールされました。
+
 ### 日本語のpodを用意する
+
+早速、インストールしたgroffを使っていきましょう。
 
 まずは、utf-8で書かれたpodを用意します。
 
@@ -32,7 +51,7 @@ OS Xの`groff`は、いくらOSのバージョンが上がっても頑なに2004
 
 `pod`では文字コードにLatain-1以外を使う時は、必ずencodingに文字コードをを指定します。
 
-`j.pod`という名前で保存します。
+`pod.pod`という名前で保存します。
 
 ### perldocを使って表示する
 
