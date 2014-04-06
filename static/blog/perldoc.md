@@ -3,7 +3,7 @@
     You have an old groff. Update to version 1.20.1 for good Unicode support.
     If you don't upgrade, wide characters may come out oddly.
 
-perldocから、内部的に、システムにインストールされているgroffが呼び出されるのですが、それが古いって言ってますね。
+perldocから、内部的にシステムにインストールされているgroffが呼び出されるのですが、それが古いって言ってますね。
 
 普段`perldoc`で日本語で書かれたドキュメントを読むことは無いのであまり気にしていませんでしたが、拙作の[`Enbld`](https://metacpan.org/pod/Enbld)というツールの日本語ドキュメントをpodで書いたので、perldocを使って日本語で書かれたドキュメントを読む方法を調べてみました。
 
@@ -100,13 +100,15 @@ OS Xの`groff`は、いくらOSのバージョンが上がっても頑なに2004
 
 更に追いかけて行くと、`parse_from_file`メソッドから`_parse_with_pod_man`メソッドが呼ばれています。
 
+この`_parse_with_pod_man`メソッドから、`Pod::Perldoc::ToMan`モジュールを呼び出しています。
+
 #### Pod::Manモジュール
 
-`Pod::Perldoc::ToMan`モジュールの161行目に、`Pod::Man`モジュールを呼び出しているところが有ります。
+`Pod::Perldoc::ToMan`モジュールを追いかけて行くと、161行目に`Pod::Man`モジュールを呼び出しているところが有ります。
 
     my $parser = Pod::Man->new( $self->_get_podman_switches );
 
-**この`Pod::Mane`モジュールのコンストラクタへの引数がポイントです!!**
+**この`Pod::Man`モジュールのコンストラクタへの引数がポイントです!!**
 
 `Pod::Man`モジュールのpodを確認してみましょう。
 
@@ -155,7 +157,7 @@ OS Xの`groff`は、いくらOSのバージョンが上がっても頑なに2004
 
 見事に、utf8フラグをセットする箇所がコメントアウトされています…。
 
-と言うわけで、現状の`perldoc`は、そのままでは日本語が表示されません。
+と言うわけで、現状の`perldoc`はそのままでは日本語が表示されません。
 
 ## 解決策
 
