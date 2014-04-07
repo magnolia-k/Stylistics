@@ -103,7 +103,7 @@ OS Xの`groff`は、いくらOSのバージョンが上がっても頑なに2004
 
 更に追いかけて行くと、`parse_from_file`メソッドから`_parse_with_pod_man`メソッドが呼ばれています。
 
-この`_parse_with_pod_man`メソッドから、`Pod::Perldoc::ToMan`モジュールを呼び出しています。
+この`_parse_with_pod_man`メソッドから、`Pod::Man`モジュールを呼び出しています。
 
 #### Pod::Manモジュール
 
