@@ -1,3 +1,13 @@
+2014/07/07:追記
+
+この記事を書いてみて、よく読み返すと`nesting_helpers`関数が全然有効に動作していない事に気がつきました。
+
+GitHubに[issue](https://github.com/Test-More/test-more/issues/413)を挙げたところ、`nesting_helpers`関数は無くなり、代わりに1.301001_005で、`nest`関数が導入されました。
+
+よって、この記事は既に古くなりました。新しく、[新しいTest::Moreに導入されるhelpersとnest関数について](http://code-stylistics.net/archives/helpers_update.html)という記事で書き直したので、そちらを参照して下さい。
+
+============
+
 もうすぐリリースされるTest::Moreの新しいバージョンに`helpers`と、`nesting_helpers`という便利な関数が二つ導入されます。
 
 (7/5時点では開発バージョンである1.301001_002がcpanにアップされています)
