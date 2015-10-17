@@ -4,7 +4,7 @@
 
 　素直にmattnさんの[`mkup`](https://github.com/mattn/mkup)を使えば普通に解決だけど、Perlでも似たようなものが作れないかと、書いてみた。
 
-[https://github.com/mattn/mkup](https://github.com/mattn/mkup)
+[https://github.com/magnolia-k/p5-mrkvw](https://github.com/magnolia-k/p5-mrkvw)
 
 AnyEventベースで、[Twiggy](http://search.cpan.org/dist/Twiggy/lib/Twiggy.pm)と、[Plack::App::WebSocket](http://search.cpan.org/~toshioito/Plack-App-WebSocket/lib/Plack/App/WebSocket.pm)と、[AnyEvent::Filesys::Notify](http://search.cpan.org/dist/AnyEvent-Filesys-Notify/lib/AnyEvent/Filesys/Notify.pm)を組み合わせた。
 
