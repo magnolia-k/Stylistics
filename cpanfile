@@ -1,4 +1,5 @@
 requires 'Amon2', '6.00';
+requires 'Amon2::Plugin::Web::CSRFDefender', '0';
 requires 'DBD::SQLite', '1.33';
 requires 'HTML::FillInForm::Lite', '1.11';
 requires 'HTTP::Session2', '0.04';
